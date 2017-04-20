@@ -23,6 +23,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        config([
+			'laravellocalization.supportedLocales' => [
+                'en' => ['name' => 'English', 'script' => 'Latn', 'native' => 'English', 'regional' => 'en_GB'],
+                'hr' => ['name' => 'Croatian', 'script' => 'Latn', 'native' => 'Hrvatski', 'regional' => 'hr_HR'],
+			],
+			'laravellocalization.hideDefaultLocaleInURL' => true,
+		]);
     }
 }

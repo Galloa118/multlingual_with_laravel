@@ -11,6 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group([
+    'prefix' => LaravelLocalization::setLocale(),
+    'middleware' => [ 'localizationRedirect' ]
+], function () {
+    /** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
+    Route::get('/', function () {
+        return view('welcome');
+    });
 });
+
+/** OTHER PAGES THAT SHOULD NOT BE LOCALIZED **/
