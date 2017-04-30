@@ -29,6 +29,11 @@ class AppServiceProvider extends ServiceProvider
                 'hr' => ['name' => 'Croatian', 'script' => 'Latn', 'native' => 'Hrvatski', 'regional' => 'hr_HR'],
 			],
 			'laravellocalization.hideDefaultLocaleInURL' => true,
+            
+            'translatable.locales' => [
+                'en',
+                'hr'
+            ],
 		]);
     }
 }
