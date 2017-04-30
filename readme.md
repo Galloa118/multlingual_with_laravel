@@ -26,6 +26,14 @@ and change the `APP_KEY` in `.env` using:
 php artisan key:generate
 ```
 
+Create empty database file called `database.sqlite` in `database` directory.
+
+Run migrations with:
+
+```
+php artisan migrate
+```
+
 ## Running
 
 From terminal type:
