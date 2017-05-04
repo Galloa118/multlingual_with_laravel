@@ -22,3 +22,5 @@ Route::group([
 });
 
 /** OTHER PAGES THAT SHOULD NOT BE LOCALIZED **/
+
+Route::resource('articles', 'ArticleController', ['except' => ['show']]);
