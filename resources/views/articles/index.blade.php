@@ -7,11 +7,13 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
+            <br />
             <a class="btn btn-primary" href="{{ route('articles.create') }}">Create New</a>
         </div>
     </div>
     <div class="row">
         <div class="col-md-12">
+            <br />
             @forelse($articles as $article)
                 <div class="panel panel-default">
                     <div class="panel-body">

@@ -26,7 +26,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        //
+        return view('articles.create');
     }
 
     /**
@@ -37,7 +37,23 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'translation.*.title' => 'required|string',
+            'translation.*.content' => 'nullable|string',
+        ]);
+
+        $article = new Article;
+        foreach (config('translatable.locales') as $locale) {
+            $article->fill([
+                $locale => [
+                    'title' => $request->get('translation')[$locale]['title'],
+                    'content' => $request->get('translation')[$locale]['content']
+                ]
+            ]);
+        }
+        $article->save();
+
+        return redirect()->route('articles.index');
     }
 
     /**
