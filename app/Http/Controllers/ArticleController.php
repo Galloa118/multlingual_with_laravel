@@ -64,7 +64,7 @@ class ArticleController extends Controller
      */
     public function edit(Article $article)
     {
-        //
+        return view('articles.edit')->with(compact('article'));
     }
 
     /**
@@ -76,7 +76,22 @@ class ArticleController extends Controller
      */
     public function update(Request $request, Article $article)
     {
-        //
+        $this->validate($request, [
+            'translation.*.title' => 'required|string',
+            'translation.*.content' => 'nullable|string',
+        ]);
+
+        foreach (config('translatable.locales') as $locale) {
+            $article->fill([
+                $locale => [
+                    'title' => $request->get('translation')[$locale]['title'],
+                    'content' => $request->get('translation')[$locale]['content']
+                ]
+            ]);
+        }
+        $article->save();
+
+        return redirect()->route('articles.index');
     }
 
     /**
