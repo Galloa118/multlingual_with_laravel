@@ -26,5 +26,3 @@ Route::group([
 Route::resource('articles', 'ArticleController', ['except' => ['show']]);
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index');
