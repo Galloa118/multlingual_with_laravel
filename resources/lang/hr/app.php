@@ -3,5 +3,7 @@
 return [
     // key => value, goes here
     'documentation' => 'Dokumentacija',
-    'news' => 'Novosti'
+    'news' => 'Novosti',
+    'register' => 'Registracija',
+    'login' => 'Prijava'
 ];

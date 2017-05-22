@@ -82,6 +82,8 @@
                 <div class="links">
                     <a href="https://laravel.com/docs">@lang('app.documentation')</a>
                     <a href="https://laravel-news.com">@lang('app.news')</a>
+                    <a href="{{ url('/login') }}">@lang('app.login')</a>
+                    <a href="{{ url('/register') }}">@lang('app.register')</a>
                 </div>
             </div>
         </div>
