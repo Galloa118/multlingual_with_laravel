@@ -5,5 +5,6 @@ return [
     'documentation' => 'Dokumentacija',
     'news' => 'Novosti',
     'register' => 'Registracija',
-    'login' => 'Prijava'
+    'login' => 'Prijava',
+    'articles' => 'Članci'
 ];

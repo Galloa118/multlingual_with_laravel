@@ -82,8 +82,12 @@
                 <div class="links">
                     <a href="https://laravel.com/docs">@lang('app.documentation')</a>
                     <a href="https://laravel-news.com">@lang('app.news')</a>
-                    <a href="{{ url('/login') }}">@lang('app.login')</a>
-                    <a href="{{ url('/register') }}">@lang('app.register')</a>
+                    @if(Auth::check())
+                        <a href="{{ route('articles.index') }}">@lang('app.articles')</a>
+                    @else
+                        <a href="{{ url('/login') }}">@lang('app.login')</a>
+                        <a href="{{ url('/register') }}">@lang('app.register')</a>
+                    @endif
                 </div>
             </div>
         </div>

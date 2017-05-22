@@ -5,5 +5,6 @@ return [
     'documentation' => 'Documentation',
     'news' => 'News',
     'register' => 'Register',
-    'login' => 'Login'
+    'login' => 'Login',
+    'articles' => 'Articles'
 ];
